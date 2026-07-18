@@ -90,7 +90,7 @@ AI Engineer with 3+ years of experience building multi-agent systems, computer v
 
 ## 📄 Paper Published
 
-**VQA for Medical Data Using a Visio-Linguistic Model**
+**[VQA for Medical Data Using a Visio-Linguistic Model](https://link.springer.com/chapter/10.1007/978-981-96-6389-7_17)**
 - Achieved 80.93% accuracy on Med-VQA, outperforming BAN-VQAMix, CMSA-MTPT, MMQ-BAN, FITS, hi-VQA, and Q2ATransformer
 - Used a dataset 500x smaller than comparable LLM-based approaches while achieving similar results
 
