@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tran Thi Kim Thanh | Portfolio</title>
+  <style>
+    :root {
+      --spacing-unit: 48px;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f7f8fa;
+      color: #1b1b1b;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 70px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      padding: 36px 32px;
+    }
+
+    /* Profile Section */
+    .profile-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .profile-info {
+      flex: 2;
+      text-align: left;
+    }
+
+    .profile-avatar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      background: #1b1b1b;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1b1b1b;
+      line-height: 1.3;
+    }
+
+    .desc {
+      color: #666;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .contacts a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 0.8125rem;
+      white-space: nowrap;
+      border-radius: 4px;
+      padding: 8px 16px;
+      transition: background 0.2s;
+      background-color: #1b1b1b;
+    }
+
+    .contacts a:hover {
+      background: #555555;
+    }
+
+    .experience,
+    .projects,
+    .achievements {
+      margin-top: var(--spacing-unit);
+    }
+
+    .project-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-left: 0;
+    }
+
+    .project-item,
+    .tool-item {
+      background: #f7f8fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      transition: all 0.2s;
+    }
+
+    .project-item:hover,
+    .tool-item:hover {
+      border-color: #1b1b1b;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-year {
+      font-size: 0.875rem;
+      color: #666;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .project-title,
+    .tool-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #1b1b1b;
+      line-height: 1.3;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .project-description,
+    .tool-description {
+      color: #666;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .project-description ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .project-description li {
+      margin-bottom: 4px;
+    }
+
+    .project-footer {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .github-btn {
+      display: inline-block;
+      padding: 4px 10px;
+      background: transparent;
+      color: #1b1b1b;
+      text-decoration: none;
+      border: 1px solid #1b1b1b;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .github-btn:hover {
+      background: #1b1b1b;
+      color: #fff;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .project-tag {
+      background: #1b1b1b;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .tool-item.featured {
+      border: 2px solid #1b1b1b;
+      background: #fff;
+    }
+
+    .tool-item.featured .tool-title {
+      font-size: 1.25rem;
+      color: #1b1b1b;
+    }
+
+    .tool-item.featured .tool-description {
+      color: #1b1b1b;
+      font-size: 0.9375rem;
+    }
+
+    .tool-item.secondary {
+      opacity: 0.85;
+      background: #fafafa;
+    }
+
+    .tool-item.secondary:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 16px;
+        margin: 20px 16px;
+      }
+
+      .profile-layout {
+        flex-direction: column-reverse;
+        gap: 24px;
+      }
+
+      .profile-info {
+        text-align: center;
+      }
+
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 12px;
+        font-size: 2.25rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+      }
+
+      .contacts {
+        justify-content: center;
+      }
+
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .project-title,
+      .tool-title {
+        font-size: 1rem;
+      }
+
+      .project-year {
+        font-size: 0.8125rem;
+      }
+
+      .project-description,
+      .tool-description {
+        font-size: 0.8125rem;
+      }
+
+      .project-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .github-btn {
+        margin-bottom: 4px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile-layout">
+      <div class="profile-info">
+        <h1>Tran Thi Kim Thanh</h1>
+        <div class="desc">
+          AI Engineer with 3+ years of experience building multi-agent systems, computer vision, and NLP
+          applications. Passionate about AI research and model development — designing and fine-tuning deep
+          learning models, optimizing neural architectures, and exploring cutting-edge AI techniques.<br />
+          B.S. in Artificial Intelligence, FPT University (GPA 3.37/4.0).
+        </div>
+        <div class="contacts">
+          <a href="mailto:thanhttk134@gmail.com" target="_blank"><span>Email</span></a>
+          <a href="https://github.com/thanhtran134" target="_blank"><span>Github</span></a>
+          <a href="https://linkedin.com/in/thanhtran134" target="_blank"><span>LinkedIn</span></a>
+          <a href="resume.pdf" target="_blank"><span>CV</span></a>
+        </div>
+      </div>
+      <div class="profile-avatar">
+        <div class="avatar">TT</div>
+      </div>
+    </div>
+
+    <div class="experience">
+      <h2>Experience</h2>
+      <ul class="project-list">
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">AI Researcher / Engineer — VMO Group</div>
+            <div class="project-year">Nov 2024 – Now</div>
+          </div>
+          <div class="project-description">
+            Building AI Agent systems end-to-end — data preparation, pipelines, and API-level deployment.
+            Evaluating and monitoring agents in production, optimizing for latency and cost.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">RAG</span>
+              <span class="project-tag">LangChain/LangGraph</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Vector DB</span>
+              <span class="project-tag">MCP</span>
+              <span class="project-tag">AWS Bedrock</span>
+            </div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">AI Researcher / Engineer — Samsung SDS</div>
+            <div class="project-year">May 2024 – Oct 2025</div>
+          </div>
+          <div class="project-description">
+            Fine-tuned GOT-OCR 2.0 for Korean document OCR parsing and document generation. Built AI Agent
+            systems from data preparation to API-level deployment, with PoC experiments for new features.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">RAG</span>
+              <span class="project-tag">LangChain/LangGraph</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Vector DB</span>
+            </div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">AI Consultant (Freelancer) — NeoLab</div>
+            <div class="project-year">May 2025 – Aug 2025</div>
+          </div>
+          <div class="project-description">
+            Designed UX/UI flow and coordination logic for multi-AI-agent systems used in TVC, PR, and short
+            film production.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">Multi-Agent Systems</span>
+            </div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">AI Engineer — Advance and Nurture Laboratory</div>
+            <div class="project-year">Aug 2022 – Dec 2023</div>
+          </div>
+          <div class="project-description">
+            Used GAN-based models to generate face variations from MediaPipe keypoints and composited them
+            into video frames, with sharpening/blending and Laplacian-based blur detection for quality control.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">GAN</span>
+              <span class="project-tag">Computer Vision</span>
+              <span class="project-tag">MediaPipe</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">VQA for Medical Data Using a Visio-Linguistic Model</div>
+            <div class="project-year">2023</div>
+          </div>
+          <div class="project-description">
+            Published research achieving 80.93% accuracy on Med-VQA — outperforming BAN-VQAMix, CMSA-MTPT,
+            MMQ-BAN, FITS, hi-VQA, and Q2ATransformer — using a dataset 500x smaller than comparable LLM
+            approaches. Combines EfficientNet + RoBERTa features with Prototype Learning (Hopfield + self-attention).
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">Medical AI</span>
+              <span class="project-tag">VQA</span>
+              <span class="project-tag">EfficientNet</span>
+              <span class="project-tag">RoBERTa</span>
+              <span class="project-tag">Prototype Learning</span>
+            </div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">Road Damage Detection and Mobile Application</div>
+            <div class="project-year">2022</div>
+          </div>
+          <div class="project-description">
+            Mobile app for real-time road damage detection, deployed with TensorFlow Lite. Achieved ~0.82
+            score using APSO as the evaluation metric.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">Computer Vision</span>
+              <span class="project-tag">TensorFlow Lite</span>
+              <span class="project-tag">Mobile</span>
+            </div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-header">
+            <div class="project-title">AI Bot Telegram</div>
+            <div class="project-year">2025</div>
+          </div>
+          <div class="project-description">
+            Text-to-Image anime 2D character generation bot. Built a FastAPI server calling a model API,
+            deployed and delivered to a customer.
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Text-to-Image</span>
+              <span class="project-tag">Deployment</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="achievements">
+      <h2>Achievements &amp; Publications</h2>
+      <div class="tools-grid">
+        <div class="tool-item featured">
+          <div class="tool-title">VQA for Medical Data Using a Visio-Linguistic Model</div>
+          <div class="tool-description">
+            Published paper — 80.93% accuracy on Med-VQA using a dataset 500x smaller than comparable LLM models.
+          </div>
+        </div>
+        <div class="tool-item secondary">
+          <div class="tool-title">Excellent Employee Award — Samsung SDS</div>
+          <div class="tool-description">Apr 2025</div>
+        </div>
+        <div class="tool-item secondary">
+          <div class="tool-title">Excellent Student Award</div>
+          <div class="tool-description">Spring 2023, FPT University</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
